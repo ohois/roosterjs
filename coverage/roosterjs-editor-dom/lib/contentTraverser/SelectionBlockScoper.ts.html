@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>32/32</span>
+                <span class='fraction'>33/33</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>32/32</span>
+                <span class='fraction'>33/33</span>
             </div>
         
             
@@ -170,7 +170,11 @@
 <a name='L111'></a><a href='#L111'>111</a>
 <a name='L112'></a><a href='#L112'>112</a>
 <a name='L113'></a><a href='#L113'>113</a>
-<a name='L114'></a><a href='#L114'>114</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L114'></a><a href='#L114'>114</a>
+<a name='L115'></a><a href='#L115'>115</a>
+<a name='L116'></a><a href='#L116'>116</a>
+<a name='L117'></a><a href='#L117'>117</a>
+<a name='L118'></a><a href='#L118'>118</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -191,6 +195,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -202,13 +207,16 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">50x</span>
+<span class="cline-any cline-yes">178x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">50x</span>
+<span class="cline-any cline-yes">178x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">50x</span>
-<span class="cline-any cline-yes">50x</span>
-<span class="cline-any cline-yes">50x</span>
+<span class="cline-any cline-yes">178x</span>
+<span class="cline-any cline-yes">19x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">178x</span>
+<span class="cline-any cline-yes">178x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -225,8 +233,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">39x</span>
-<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-yes">167x</span>
+<span class="cline-any cline-yes">114x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -236,14 +244,14 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">15x</span>
-<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">109x</span>
+<span class="cline-any cline-yes">109x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">19x</span>
+<span class="cline-any cline-yes">53x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -261,7 +269,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">66x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -296,6 +304,7 @@ import {
     getFirstInlineElement,
     getLastInlineElement,
 } from '../inlineElements/getFirstLastInlineElement';
+import type { CompatibleContentPosition } from 'roosterjs-editor-types/lib/compatibleTypes';
 &nbsp;
 /**
  * @internal
@@ -305,7 +314,7 @@ import {
  * This provides a scope for parsing from cursor position up to begin of the selection block
  */
 export default class SelectionBlockScoper implements TraversingScoper {
-    private block: BlockElement;
+    private block: BlockElement | null;
     private position: NodePosition;
 &nbsp;
     /**
@@ -317,9 +326,12 @@ export default class SelectionBlockScoper implements TraversingScoper {
     constructor(
         public rootNode: Node,
         position: NodePosition | Range,
-        private startFrom: ContentPosition
+        private startFrom: ContentPosition | CompatibleContentPosition
     ) {
-        position = safeInstanceOf(position, 'Range') ? Position.getStart(position) : position;
+        if (safeInstanceOf(position, 'Range')) {
+            position = Position.getStart(position);
+        }
+&nbsp;
         this.position = position.normalize();
         this.block = getBlockElementAtNode(this.rootNode, this.position.node);
     }
@@ -327,7 +339,7 @@ export default class SelectionBlockScoper implements TraversingScoper {
     /**
      * Get the start block element
      */
-    public getStartBlockElement(): BlockElement {
+    public getStartBlockElement(): BlockElement | null {
         return this.block;
     }
 &nbsp;
@@ -337,7 +349,7 @@ export default class SelectionBlockScoper implements TraversingScoper {
      *  The reason why we choose the one before rather after is, when cursor is at the end of a paragraph,
      * the one after likely will point to inline in next paragraph which may be null if the cursor is at bottom of editor
      */
-    public getStartInlineElement(): InlineElement {
+    public getStartInlineElement(): InlineElement | null {
         if (this.block) {
             switch (this.startFrom) {
                 case ContentPosition.Begin:
@@ -373,7 +385,7 @@ export default class SelectionBlockScoper implements TraversingScoper {
      * This is a block scoper, which is not like selection scoper where it may cut an inline element in half
      * A block scoper does not cut an inline in half
      */
-    public trimInlineElement(inlineElement: InlineElement): InlineElement {
+    public trimInlineElement(inlineElement: InlineElement): InlineElement | null {
         return this.block &amp;&amp; inlineElement &amp;&amp; this.block.contains(inlineElement.getContainerNode())
             ? inlineElement
             : null;
@@ -388,7 +400,7 @@ export default class SelectionBlockScoper implements TraversingScoper {
 function getFirstLastInlineElementFromBlockElement(
     block: BlockElement,
     isFirst: boolean
-): InlineElement {
+): InlineElement | null {
     if (block instanceof NodeBlockElement) {
         let blockNode = block.getStartNode();
         return isFirst ? getFirstInlineElement(blockNode) : <span class="branch-1 cbranch-no" title="branch not covered" >getLastInlineElement(blockNode);</span>
@@ -403,7 +415,7 @@ function getFirstLastInlineElementFromBlockElement(
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Tue Oct 19 2021 23:31:48 GMT+0000 (Coordinated Universal Time)
+                at Wed Nov 23 2022 10:10:01 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>

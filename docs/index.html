@@ -3,8 +3,8 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>RoosterJs API Reference - v8.10.1</title>
-	<meta name="description" content="Documentation for RoosterJs API Reference - v8.10.1">
+	<title>RoosterJs API Reference</title>
+	<meta name="description" content="Documentation for RoosterJs API Reference">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="assets/css/main.css">
 	<script async src="assets/js/search.js" id="search-script"></script>
@@ -23,7 +23,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="index.html" class="title">RoosterJs API Reference - v8.10.1</a>
+					<a href="index.html" class="title">RoosterJs API Reference</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -48,7 +48,7 @@
 	</div>
 	<div class="tsd-page-title">
 		<div class="container">
-			<h1>RoosterJs API Reference - v8.10.1</h1>
+			<h1>RoosterJs API Reference</h1>
 		</div>
 	</div>
 </header>
@@ -60,7 +60,7 @@
 				<a href="#content" id="content" style="color: inherit; text-decoration: none;">
 					<h2>Content</h2>
 				</a>
-				<p>Rooster contains 6 packages.</p>
+				<p>Rooster contains 6 basic packages.</p>
 				<ol>
 					<li><p><a href="modules/roosterjs.html">roosterjs</a>:
 							A facade of all Rooster code for those who want a quick start. Use the
@@ -85,6 +85,20 @@
 					</li>
 					<li><p><a href="modules/roosterjs_editor_types.html">roosterjs-editor-types</a>:
 						Defines public interfaces and enumerations.</p>
+					</li>
+				</ol>
+				<p>There are also some extension packages to provide additional functionalities.</p>
+				<ol>
+					<li><p><a href="modules/roosterjs_color_utils.html">roosterjs-color-utils</a>:
+						Provide color transformation utility to make editor work under dark mode.</p>
+					</li>
+					<li><p><a href="modules/roosterjs_react.html">roosterjs-react</a>:
+						Provide a React wrapper of roosterjs so it can be easily used with React.</p>
+					</li>
+					<li><p><a href="modules/roosterjs_editor_types_compatible.html">roosterjs-editor-types-compatible</a>:
+							Provide types that are compatible with isolatedModules mode. When using isolatedModules mode,
+							&quot;const enum&quot; will not work correctly, this package provides enums with prefix &quot;Compatible&quot; in
+						their names and they have the same value with const enums in roosterjs-editor-types package</p>
 					</li>
 				</ol>
 				<a href="#see-also" id="see-also" style="color: inherit; text-decoration: none;">
@@ -120,6 +134,12 @@
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="modules/roosterjs_editor_types.html">roosterjs-<wbr>editor-<wbr>types</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/roosterjs_editor_types_compatible.html">roosterjs-<wbr>editor-<wbr>types-<wbr>compatible</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/roosterjs_react.html">roosterjs-<wbr>react</a>
 					</li>
 				</ul>
 			</nav>

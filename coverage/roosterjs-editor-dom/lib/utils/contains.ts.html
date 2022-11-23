@@ -131,7 +131,13 @@
 <a name='L72'></a><a href='#L72'>72</a>
 <a name='L73'></a><a href='#L73'>73</a>
 <a name='L74'></a><a href='#L74'>74</a>
-<a name='L75'></a><a href='#L75'>75</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L75'></a><a href='#L75'>75</a>
+<a name='L76'></a><a href='#L76'>76</a>
+<a name='L77'></a><a href='#L77'>77</a>
+<a name='L78'></a><a href='#L78'>78</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -162,50 +168,50 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">13899x</span>
-<span class="cline-any cline-yes">1027x</span>
+<span class="cline-any cline-yes">35195x</span>
+<span class="cline-any cline-yes">5108x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">12872x</span>
-<span class="cline-any cline-yes">2550x</span>
+<span class="cline-any cline-yes">30087x</span>
+<span class="cline-any cline-yes">4827x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">10322x</span>
-<span class="cline-any cline-yes">1375x</span>
-<span class="cline-any cline-yes">1375x</span>
+<span class="cline-any cline-yes">25260x</span>
+<span class="cline-any cline-yes">3003x</span>
+<span class="cline-any cline-yes">3003x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">10322x</span>
-<span class="cline-any cline-yes">5244x</span>
-<span class="cline-any cline-yes">5244x</span>
+<span class="cline-any cline-yes">25260x</span>
+<span class="cline-any cline-yes">8756x</span>
+<span class="cline-any cline-yes">8756x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">10322x</span>
-<span class="cline-any cline-yes">557x</span>
+<span class="cline-any cline-yes">25260x</span>
+<span class="cline-any cline-yes">950x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">9765x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">24310x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">9449x</span>
-<span class="cline-any cline-yes">9449x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">20686x</span>
+<span class="cline-any cline-yes">20686x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import safeInstanceOf from '../utils/safeInstanceOf';
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import safeInstanceOf from './safeInstanceOf';
 import { NodeType } from 'roosterjs-editor-types';
 &nbsp;
 /**
@@ -218,8 +224,8 @@ import { NodeType } from 'roosterjs-editor-types';
  * Otherwise false.
  */
 export default function contains(
-    container: Node,
-    contained: Node,
+    container: Node | null | undefined,
+    contained: Node | null | undefined,
     treatSameNodeAsContain?: boolean
 ): boolean;
 &nbsp;
@@ -229,11 +235,14 @@ export default function contains(
  * @param contained The range to check if it is inside container
  * @returns True if contained is inside container, otherwise false
  */
-export default function contains(container: Node, contained: Range): boolean;
+export default function contains(
+    container: Node | null | undefined,
+    contained: Range | null | undefined
+): boolean;
 &nbsp;
 export default function contains(
-    container: Node,
-    contained: Node | Range,
+    container: Node | null | undefined,
+    contained: Node | Range | null | undefined,
     treatSameNodeAsContain?: boolean
 ): boolean {
     if (!container || !contained) {
@@ -264,7 +273,7 @@ export default function contains(
     );
 }
 &nbsp;
-function internalContains(container: Node, contained: Node): boolean {
+function internalContains(container: Node, contained: Node | null): boolean {
     <span class="missing-if-branch" title="else path not taken" >E</span>if (container.contains) {
         return container.contains(contained);
     } else {
@@ -286,7 +295,7 @@ function internalContains(container: Node, contained: Node): boolean {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Tue Oct 19 2021 23:31:48 GMT+0000 (Coordinated Universal Time)
+                at Wed Nov 23 2022 10:10:01 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>

@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">91.67% </span>
+                <span class="strong">92% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>22/24</span>
+                <span class='fraction'>23/25</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">91.67% </span>
+                <span class="strong">92% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>22/24</span>
+                <span class='fraction'>23/25</span>
             </div>
         
             
@@ -126,7 +126,8 @@
 <a name='L67'></a><a href='#L67'>67</a>
 <a name='L68'></a><a href='#L68'>68</a>
 <a name='L69'></a><a href='#L69'>69</a>
-<a name='L70'></a><a href='#L70'>70</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -157,43 +158,44 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">87x</span>
+<span class="cline-any cline-yes">215x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">94x</span>
+<span class="cline-any cline-yes">283x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">94x</span>
-<span class="cline-any cline-yes">282x</span>
-<span class="cline-any cline-yes">94x</span>
+<span class="cline-any cline-yes">283x</span>
+<span class="cline-any cline-yes">566x</span>
+<span class="cline-any cline-yes">283x</span>
+<span class="cline-any cline-yes">283x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">94x</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">86x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">15x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">94x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">94x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">94x</span>
-<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">283x</span>
+<span class="cline-any cline-yes">71x</span>
+<span class="cline-any cline-yes">212x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">18x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">94x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">283x</span>
+<span class="cline-any cline-yes">36x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">283x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">283x</span>
+<span class="cline-any cline-yes">18x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">283x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import getInlineElementAtNode from './getInlineElementAtNode';
 import PartialInlineElement from './PartialInlineElement';
@@ -211,7 +213,7 @@ import { InlineElement, NodePosition, NodeType } from 'roosterjs-editor-types';
  * @param root Root node of current scope, use for create InlineElement
  * @param position The position to get InlineElement before
  */
-export function <span class="fstat-no" title="function not covered" >getInlineElementBefore(</span>root: Node, position: NodePosition): InlineElement {
+export function <span class="fstat-no" title="function not covered" >getInlineElementBefore(</span>root: Node, position: NodePosition): InlineElement | null {
 <span class="cstat-no" title="statement not covered" >    return getInlineElementBeforeAfter(root, position, false /*isAfter*/);</span>
 }
 &nbsp;
@@ -225,7 +227,7 @@ export function <span class="fstat-no" title="function not covered" >getInlineEl
  * @param root Root node of current scope, use for create InlineElement
  * @param position The position to get InlineElement after
  */
-export function getInlineElementAfter(root: Node, position: NodePosition): InlineElement {
+export function getInlineElementAfter(root: Node, position: NodePosition): InlineElement | null {
     return getInlineElementBeforeAfter(root, position, true /*isAfter*/);
 }
 &nbsp;
@@ -238,7 +240,8 @@ export function getInlineElementBeforeAfter(root: Node, position: NodePosition, 
     }
 &nbsp;
     position = position.normalize();
-    let { node, offset, isAtEnd } = position;
+    let { offset, isAtEnd } = position;
+    let node: Node | null = position.node;
     let isPartial = false;
 &nbsp;
     if ((!isAfter &amp;&amp; offset == 0 &amp;&amp; !isAtEnd) || (isAfter &amp;&amp; isAtEnd)) {
@@ -258,8 +261,8 @@ export function getInlineElementBeforeAfter(root: Node, position: NodePosition, 
 &nbsp;
     if (inlineElement &amp;&amp; (isPartial || inlineElement.contains(position))) {
         inlineElement = isAfter
-            ? new PartialInlineElement(inlineElement, position, null)
-            : <span class="branch-1 cbranch-no" title="branch not covered" >new PartialInlineElement(inlineElement, null, position);</span>
+            ? new PartialInlineElement(inlineElement, position, undefined)
+            : <span class="branch-1 cbranch-no" title="branch not covered" >new PartialInlineElement(inlineElement, undefined, position);</span>
     }
 &nbsp;
     return inlineElement;
@@ -271,7 +274,7 @@ export function getInlineElementBeforeAfter(root: Node, position: NodePosition, 
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Tue Oct 19 2021 23:31:48 GMT+0000 (Coordinated Universal Time)
+                at Wed Nov 23 2022 10:10:01 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>

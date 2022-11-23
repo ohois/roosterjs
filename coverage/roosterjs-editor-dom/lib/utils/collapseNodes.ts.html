@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">96.15% </span>
+                <span class="strong">92.86% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>25/26</span>
+                <span class='fraction'>26/28</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">95% </span>
+                <span class="strong">85.71% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>19/20</span>
+                <span class='fraction'>24/28</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">96.15% </span>
+                <span class="strong">92.86% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>25/26</span>
+                <span class='fraction'>26/28</span>
             </div>
         
             
@@ -128,7 +128,12 @@
 <a name='L69'></a><a href='#L69'>69</a>
 <a name='L70'></a><a href='#L70'>70</a>
 <a name='L71'></a><a href='#L71'>71</a>
-<a name='L72'></a><a href='#L72'>72</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a>
+<a name='L75'></a><a href='#L75'>75</a>
+<a name='L76'></a><a href='#L76'>76</a>
+<a name='L77'></a><a href='#L77'>77</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -150,22 +155,22 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">948x</span>
+<span class="cline-any cline-yes">1539x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">946x</span>
-<span class="cline-any cline-yes">946x</span>
+<span class="cline-any cline-yes">1537x</span>
+<span class="cline-any cline-yes">1537x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">946x</span>
-<span class="cline-any cline-yes">666x</span>
-<span class="cline-any cline-yes">280x</span>
+<span class="cline-any cline-yes">1537x</span>
+<span class="cline-any cline-yes">1079x</span>
+<span class="cline-any cline-yes">458x</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">280x</span>
-<span class="cline-any cline-yes">276x</span>
-<span class="cline-any cline-yes">276x</span>
-<span class="cline-any cline-yes">276x</span>
-<span class="cline-any cline-yes">276x</span>
+<span class="cline-any cline-yes">458x</span>
+<span class="cline-any cline-yes">454x</span>
+<span class="cline-any cline-yes">454x</span>
+<span class="cline-any cline-yes">454x</span>
+<span class="cline-any cline-yes">454x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -188,20 +193,25 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1908x</span>
-<span class="cline-any cline-yes">331x</span>
+<span class="cline-any cline-yes">3090x</span>
+<span class="cline-any cline-yes">617x</span>
 <span class="cline-any cline-yes">65x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">60x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">326x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1908x</span>
+<span class="cline-any cline-yes">612x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">612x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3090x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import contains from './contains';
 import splitParentNode from './splitParentNode';
-import toArray from './toArray';
+import toArray from '../jsUtils/toArray';
 &nbsp;
 /**
  * Collapse nodes within the given start and end nodes to their common ancestor node,
@@ -233,7 +243,7 @@ export default function collapseNodes(
     } else <span class="missing-if-branch" title="if path not taken" >I</span>if (contains(end, start)) {
 <span class="cstat-no" title="statement not covered" >        return [end];</span>
     } else if (start.parentNode == end.parentNode) {
-        let nodes: Node[] = toArray(start.parentNode.childNodes);
+        let nodes: Node[] = start.parentNode ? toArray(start.parentNode<span class="branch-0 cbranch-no" title="branch not covered" >?.c</span>hildNodes) : <span class="branch-1 cbranch-no" title="branch not covered" >[];</span>
         let startIndex = nodes.indexOf(start);
         let endIndex = nodes.indexOf(end);
         return nodes.slice(startIndex, endIndex + 1);
@@ -266,6 +276,11 @@ export function collapse(
             }
             splitParentNode(node, isStart);
         }
+&nbsp;
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (!node.parentNode) {
+<span class="cstat-no" title="statement not covered" >            break;</span>
+        }
+&nbsp;
         node = node.parentNode;
     }
     return node;
@@ -277,7 +292,7 @@ export function collapse(
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Tue Oct 19 2021 23:31:48 GMT+0000 (Coordinated Universal Time)
+                at Wed Nov 23 2022 10:10:01 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>

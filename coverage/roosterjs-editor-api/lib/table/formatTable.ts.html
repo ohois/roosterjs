@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">20% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>2/10</span>
+                <span class='fraction'>12/12</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/4</span>
+                <span class='fraction'>4/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/2</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">20% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>2/10</span>
+                <span class='fraction'>12/12</span>
             </div>
         
             
@@ -55,7 +55,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -82,7 +82,14 @@
 <a name='L23'></a><a href='#L23'>23</a>
 <a name='L24'></a><a href='#L24'>24</a>
 <a name='L25'></a><a href='#L25'>25</a>
-<a name='L26'></a><a href='#L26'>26</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L26'></a><a href='#L26'>26</a>
+<a name='L27'></a><a href='#L27'>27</a>
+<a name='L28'></a><a href='#L28'>28</a>
+<a name='L29'></a><a href='#L29'>29</a>
+<a name='L30'></a><a href='#L30'>30</a>
+<a name='L31'></a><a href='#L31'>31</a>
+<a name='L32'></a><a href='#L32'>32</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -96,18 +103,24 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { ChangeSource, IEditor, TableFormat } from 'roosterjs-editor-types';
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import formatUndoSnapshot from '../utils/formatUndoSnapshot';
+import { IEditor, TableFormat } from 'roosterjs-editor-types';
 import { VTable } from 'roosterjs-editor-dom';
 &nbsp;
 /**
@@ -116,20 +129,25 @@ import { VTable } from 'roosterjs-editor-dom';
  * @param format A TableFormat object contains format information we want to apply to the table
  * @param table The table to format. This is optional. When not passed, the current table (if any) will be formatted
  */
-export default function <span class="fstat-no" title="function not covered" >formatTable(</span>
+export default function formatTable(
     editor: IEditor,
-    format: Partial&lt;TableFormat&gt;,
+    format: TableFormat,
     table?: HTMLTableElement
 ) {
-<span class="cstat-no" title="statement not covered" >    table = table || (editor.getElementAtCursor('TABLE') as HTMLTableElement);</span>
-<span class="cstat-no" title="statement not covered" >    if (table) {</span>
-<span class="cstat-no" title="statement not covered" >        editor.addUndoSnapshot(<span class="fstat-no" title="function not covered" >(s</span>tart, end) =&gt; {</span>
-            let vtable = <span class="cstat-no" title="statement not covered" >new VTable(table);</span>
-<span class="cstat-no" title="statement not covered" >            vtable.applyFormat(format);</span>
-<span class="cstat-no" title="statement not covered" >            vtable.writeBack();</span>
-<span class="cstat-no" title="statement not covered" >            editor.focus();</span>
-<span class="cstat-no" title="statement not covered" >            editor.select(start, end);</span>
-        }, ChangeSource.Format);
+    table = table || (editor.getElementAtCursor('TABLE') as HTMLTableElement);
+    if (table) {
+        formatUndoSnapshot(
+            editor,
+            (start, end) =&gt; {
+                let vtable = new VTable(table);
+                vtable.applyFormat(format);
+                vtable.writeBack();
+                editor.transformToDarkColor(vtable.table);
+                editor.focus();
+                editor.select(start, end);
+            },
+            'formatTable'
+        );
     }
 }
 &nbsp;</pre></td></tr></table></pre>
@@ -139,7 +157,7 @@ export default function <span class="fstat-no" title="function not covered" >for
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Tue Oct 19 2021 23:31:48 GMT+0000 (Coordinated Universal Time)
+                at Wed Nov 23 2022 10:10:01 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>

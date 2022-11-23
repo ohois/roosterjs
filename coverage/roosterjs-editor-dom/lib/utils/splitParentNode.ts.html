@@ -30,9 +30,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">96.77% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>27/27</span>
+                <span class='fraction'>30/31</span>
             </div>
         
             
@@ -137,34 +137,34 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">303x</span>
+<span class="cline-any cline-yes">439x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">301x</span>
-<span class="cline-any cline-yes">301x</span>
-<span class="cline-any cline-yes">301x</span>
-<span class="cline-any cline-yes">301x</span>
-<span class="cline-any cline-yes">144x</span>
-<span class="cline-any cline-yes">94x</span>
+<span class="cline-any cline-yes">437x</span>
+<span class="cline-any cline-yes">437x</span>
+<span class="cline-any cline-yes">437x</span>
+<span class="cline-any cline-yes">437x</span>
+<span class="cline-any cline-yes">210x</span>
+<span class="cline-any cline-yes">95x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">157x</span>
-<span class="cline-any cline-yes">123x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">301x</span>
-<span class="cline-any cline-yes">161x</span>
+<span class="cline-any cline-yes">227x</span>
+<span class="cline-any cline-yes">136x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">140x</span>
+<span class="cline-any cline-yes">437x</span>
+<span class="cline-any cline-yes">169x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">301x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">268x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">437x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -174,20 +174,20 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">106x</span>
-<span class="cline-any cline-yes">106x</span>
-<span class="cline-any cline-yes">106x</span>
-<span class="cline-any cline-yes">106x</span>
-<span class="cline-any cline-yes">104x</span>
+<span class="cline-any cline-yes">172x</span>
+<span class="cline-any cline-yes">172x</span>
+<span class="cline-any cline-yes">172x</span>
+<span class="cline-any cline-yes">172x</span>
+<span class="cline-any cline-yes">170x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">104x</span>
-<span class="cline-any cline-yes">104x</span>
+<span class="cline-any cline-yes">170x</span>
+<span class="cline-any cline-yes">170x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">106x</span>
+<span class="cline-any cline-yes">172x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import isNodeAfter from './isNodeAfter';
 &nbsp;
@@ -202,13 +202,13 @@
  * we remove it. @default false
  * @returns The new parent node
  */
-export default function splitParentNode(node: Node, splitBefore: boolean): Node {
+export default function splitParentNode(node: Node, splitBefore: boolean): Node | null {
     if (!node || !node.parentNode) {
         return null;
     }
 &nbsp;
     let parentNode = node.parentNode;
-    let newParent = parentNode.cloneNode(false /*deep*/) as HTMLElement;
+    let newParent: HTMLElement | null = parentNode.cloneNode(false /*deep*/) as HTMLElement;
     newParent.removeAttribute('id');
     if (splitBefore) {
         while (parentNode.firstChild &amp;&amp; parentNode.firstChild != node) {
@@ -222,7 +222,7 @@ export default function splitParentNode(node: Node, splitBefore: boolean): Node 
 &nbsp;
     // When the only child of new parent is ZERO_WIDTH_SPACE, we can still prevent keeping it by set removeEmptyNewNode to true
     if (newParent.firstChild &amp;&amp; newParent.innerHTML != '') {
-        parentNode.parentNode.insertBefore(
+        parentNode.parentNode<span class="branch-0 cbranch-no" title="branch not covered" >?.i</span>nsertBefore(
             newParent,
             splitBefore ? parentNode : parentNode.nextSibling
         );
@@ -262,7 +262,7 @@ export function splitBalancedNodeRange(nodes: Node | Node[]): HTMLElement {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Tue Oct 19 2021 23:31:48 GMT+0000 (Coordinated Universal Time)
+                at Wed Nov 23 2022 10:10:01 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>
